@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Observable} from "rxjs/Observable";
 import {HttpClient} from "@angular/common/http";
 
@@ -10,5 +10,6 @@ export class BierService {
   public getAllBier(): Observable<any>{
     return this.http.get("http://localhost:8080/bier")
   }
+
 
 }
