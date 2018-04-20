@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BierServiceService } from "../bier-service/bier-service.service";
+import {BierService} from "../bier.service";
 
 @Component({
   selector: 'app-bier-lijst',
@@ -10,7 +10,7 @@ export class BierLijstComponent implements OnInit {
 
   bier: Array<any>;
 
-  constructor(private bierService: BierServiceService) { }
+  constructor(private bierService: BierService) { }
 
   ngOnInit() {
     this.bierService.getAllBier().subscribe(data => {
