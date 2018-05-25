@@ -8,7 +8,7 @@ export class WijnService {
   constructor(private http: HttpClient) { }
 
   public getAllWijn(): Observable<any>{
-    return this.http.get("http://localhost:8080/wijn")
+    return this.http.get("http://localhost:8090/wijn")
   }
 
 }

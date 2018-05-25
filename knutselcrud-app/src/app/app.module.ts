@@ -1,7 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
-
 import {AppComponent} from './app.component';
 import {DrankenAppComponent} from './dranken-app/dranken-app.component';
 import {BierLijstComponent} from './bier-lijst/bier-lijst.component';

@@ -8,7 +8,7 @@ export class BierService {
   constructor(private http:HttpClient) { }
 
   public getAllBier(): Observable<any>{
-    return this.http.get("http://localhost:8080/bier")
+    return this.http.get("http://localhost:8090/bier")
   }
 
 

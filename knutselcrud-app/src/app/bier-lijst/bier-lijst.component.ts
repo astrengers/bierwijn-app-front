@@ -10,12 +10,16 @@ export class BierLijstComponent implements OnInit {
 
   bier: Array<any>;
 
+  biertjes: String[];
+  
   constructor(private bierService: BierService) { }
 
   ngOnInit() {
     this.bierService.getAllBier().subscribe(data => {
       this.bier = data;
+      
     })
+    this.biertjes = ["Pim", "Axel", "Thijs"];
   }
 
 }

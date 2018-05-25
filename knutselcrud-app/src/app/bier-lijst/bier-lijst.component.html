@@ -1,9 +1,41 @@
 <h2>Bier-lijst</h2>
 
-<div *ngFor="let b of bier">
-  {{b.naam}}
-  {{b.alcoholPercentage}}%
-  {{b.merkNaam}}
-  <br><br>
+<div class="row">
+  <div class="col-3">
+
+  </div>
+  <div class="col-6">
+    <input placeholder="Biertje??" ng-model="bier-lijst.component.biertjes" uib-typeahead="biertjes for biertjes in bier-lijst.component.biertjes | filter:$viewValue ">
+
+    <div *ngFor="let b of bier">
+      <ul class="list-group" >
+        <li class="list-group-item" >
+          {{b.naam}}
+          {{b.alcoholPercentage}}%
+          {{b.merkNaam}}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-3">
+
+  </div>
 
 </div>
+
+
+
+
+  <!--<ul class="list-group">-->
+    <!--<li class="list-group-item">Cras justo odio</li>-->
+    <!--<li class="list-group-item">Dapibus ac facilisis in</li>-->
+    <!--<li class="list-group-item">Morbi leo risus</li>-->
+    <!--<li class="list-group-item">Porta ac consectetur ac</li>-->
+    <!--<li class="list-group-item">Vestibulum at eros</li>-->
+  <!--</ul>-->
+  <!--<div class=""></div>-->
+<!--<div *ngFor="let b of bier">-->
+<!--{{b.naam}}-->
+<!--{{b.alcoholPercentage}}%-->
+<!--{{b.merkNaam}}-->
+<!--<br><br>-->
+<!--</div>-->
