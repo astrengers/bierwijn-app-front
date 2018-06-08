@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {WijnService} from "../wijn.service";
+import {WijnService} from "../wijnservice/wijn.service";
 
 @Component({
   selector: 'app-wijn-lijst',

@@ -1,0 +1,30 @@
+  <div class="modal-header">
+    <h4 class="modal-title">Modal title</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <h2 class="text-center">Voeg bier toe</h2>
+    <form>
+      <div class="form-group">
+        <label for="naam">Naam:</label>
+        <input [(ngModel)]="bier.naam" placeholder="Naam" name="naam" class="form-control" id="naam">
+      </div>
+
+      <div class="form-group">
+        <label for="alcoholPercentage">Alcoholpercentage:</label>
+        <input [(ngModel)]="bier.alcoholPercentage" placeholder="Alcoholpercentage" name="alcoholPercentage" class="form-control" id="alcoholPercentage">
+      </div>
+
+      <div class="form-group">
+        <label for="merkNaam">Merk:</label>
+        <input [(ngModel)]="bier.merkNaam" placeholder="Merk" name="merkNaam" class="form-control" id="merkNaam">
+      </div>
+
+      <button class="btn btn-success" (click)="createBier()">Voeg bier toe</button>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+  </div>
