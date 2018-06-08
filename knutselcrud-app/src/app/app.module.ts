@@ -11,6 +11,7 @@ import {WijnService} from "./wijnservice/wijn.service";
 import {addBierComponent} from "./add-bier/add-bier.component";
 import {FormsModule} from "@angular/forms";
 import {NgbModule, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import {NgbModule, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     FormsModule,
     NgbModule.forRoot(),
+    RouterModule
   ],
   exports:[
     BierLijstComponent
