@@ -11,7 +11,14 @@ import {WijnService} from "./wijnservice/wijn.service";
 import {addBierComponent} from "./add-bier/add-bier.component";
 import {FormsModule} from "@angular/forms";
 import {NgbModule, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
-import {RouterModule} from "@angular/router";
+import { RouterModule, Routes } from '@angular/router';
+import { MenuComponent } from './menu/menu.component';
+
+const appRoutes: Routes = [
+  { path: '', component: DrankenAppComponent},
+  { path: 'bier-lijst', component: BierLijstComponent },
+  { path: 'wijn-center', component: WijnLijstComponent }
+];
 
 @NgModule({
   declarations: [
@@ -20,16 +27,19 @@ import {RouterModule} from "@angular/router";
     BierLijstComponent,
     WijnLijstComponent,
     addBierComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     NgbModule.forRoot(),
-    RouterModule
+    RouterModule.forRoot(
+      appRoutes)
   ],
   exports:[
-    BierLijstComponent
+    BierLijstComponent,
+    RouterModule
   ],
   providers: [BierService, WijnService, HttpClientModule, NgbActiveModal],
   bootstrap: [AppComponent],

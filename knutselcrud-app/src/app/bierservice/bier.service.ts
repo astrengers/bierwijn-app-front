@@ -13,15 +13,15 @@ export class BierService {
   }
 
   public getAllBier(): Observable<any> {
-    return this.http.get("http://localhost:8090/bier")
+    return this.http.get("http://localhost:8080/bier")
   }
 
   public addBier(bier){
-    return this.http.post("http://localhost:8090/bier", bier)
+    return this.http.post("http://localhost:8080/bier", bier)
   }
 
   public deleteBier(bier) {
-    return this.http.delete("http://localhost:8090/bier" + "/" + bier);
+    return this.http.delete("http://localhost:8080/bier" + "/" + bier);
   }
 }
 
