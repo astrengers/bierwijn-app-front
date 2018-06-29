@@ -15,10 +15,12 @@ import {RouterModule, Routes} from '@angular/router';
 import {MenuComponent} from './menu/menu.component';
 import {BierThumbnail} from "./bier-lijst/bier-thumbnail";
 import {openBierComponent} from "./open-bier/open-bier.component";
+import { BierPaginaComponent } from './bier-pagina/bier-pagina.component';
 
 const appRoutes: Routes = [
   { path: '', component: DrankenAppComponent},
   { path: 'bier-lijst', component: BierLijstComponent },
+  { path: 'bier-lijst/:id', component: BierPaginaComponent},
   { path: 'wijn-center', component: WijnLijstComponent }
 ];
 
@@ -31,7 +33,8 @@ const appRoutes: Routes = [
     addBierComponent,
     MenuComponent,
     BierThumbnail,
-    openBierComponent
+    openBierComponent,
+    BierPaginaComponent
 
   ],
   imports: [

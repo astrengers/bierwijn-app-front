@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Observable} from "rxjs/Observable";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {Bier} from "../add-bier/bier.model";
 
 const httpOptions = {
   headers: new HttpHeaders ({'Content-Type': 'application/json'})
@@ -12,9 +13,8 @@ export class BierService {
   constructor(private http: HttpClient) {
   }
 
-  public getBier(id: number){
-    this.getAllBier().find(bier => bier.id===id);
-    return
+  public getBier(): any {
+    return this.http.get("http://localhost:8080/bierid/1")
   }
 
   public getAllBier(): Observable<any> {
@@ -26,7 +26,7 @@ export class BierService {
   }
 
   public deleteBier(bier) {
-    return this.http.delete("http://localhost:8080/bier" + "/" + bier);
+    return this.http.delete("http://localhost:8080/bier/" + bier);
   }
 }
 

@@ -16,7 +16,7 @@ export class openBierComponent {
               private route: ActivatedRoute){
   }
 
-  ngOnit(){
-    this.bier = this.bierService.getBier(+this.route.params['id'])
-  }
+  // ngOnit(){
+  //   this.bier = this.bierService.getBier(+this.route.params['id'])
+  // }
 }

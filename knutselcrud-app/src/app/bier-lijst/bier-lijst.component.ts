@@ -11,7 +11,7 @@ import {Bier} from "../add-bier/bier.model";
 })
 export class BierLijstComponent implements OnInit {
 
-  bieren: Array<any>;
+  bieren: Array<Bier>;
 
 
   constructor(private bierService: BierService, private modalService: NgbModal) { }
