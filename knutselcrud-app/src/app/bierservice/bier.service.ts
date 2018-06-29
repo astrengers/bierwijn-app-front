@@ -12,6 +12,11 @@ export class BierService {
   constructor(private http: HttpClient) {
   }
 
+  public getBier(id: number){
+    this.getAllBier().find(bier => bier.id===id);
+    return
+  }
+
   public getAllBier(): Observable<any> {
     return this.http.get("http://localhost:8080/bier")
   }

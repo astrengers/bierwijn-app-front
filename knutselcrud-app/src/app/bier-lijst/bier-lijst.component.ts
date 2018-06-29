@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {BierService} from "../bierservice/bier.service";
-import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {addBierComponent} from "../add-bier/add-bier.component";
 import {Bier} from "../add-bier/bier.model";
 
@@ -23,6 +23,10 @@ export class BierLijstComponent implements OnInit {
   open(){
     const modalRef = this.modalService.open(addBierComponent);
     modalRef.componentInstance.name = 'World';
+  }
+
+  openBierMetid(bierId){
+
   }
 
   public getBierLijst(){
