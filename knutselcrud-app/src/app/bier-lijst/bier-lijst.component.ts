@@ -22,8 +22,8 @@ export class BierLijstComponent implements OnInit {
 
   open(){
     const modalRef = this.modalService.open(addBierComponent);
-    modalRef.componentInstance.name = 'World';
-  }
+  modalRef.componentInstance.name = 'World';
+}
 
   openBierMetid(bierId){
 
