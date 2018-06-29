@@ -7,7 +7,7 @@ import {ActivatedRoute} from "@angular/router";
   templateUrl: './open-bier.html',
   selector: 'open-bier'
 })
-export class addBierComponent {
+export class openBierComponent {
 
   bier:any; // moet any zijn, anders gemekker over void
 

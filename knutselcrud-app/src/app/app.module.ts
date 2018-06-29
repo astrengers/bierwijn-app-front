@@ -10,9 +10,11 @@ import {WijnLijstComponent} from './wijn-lijst/wijn-lijst.component';
 import {WijnService} from "./wijnservice/wijn.service";
 import {addBierComponent} from "./add-bier/add-bier.component";
 import {FormsModule} from "@angular/forms";
-import {NgbModule, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
-import { RouterModule, Routes } from '@angular/router';
-import { MenuComponent } from './menu/menu.component';
+import {NgbActiveModal, NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {RouterModule, Routes} from '@angular/router';
+import {MenuComponent} from './menu/menu.component';
+import {BierThumbnail} from "./bier-lijst/bier-thumbnail";
+import {openBierComponent} from "./open-bier/open-bier.component";
 
 const appRoutes: Routes = [
   { path: '', component: DrankenAppComponent},
@@ -28,6 +30,9 @@ const appRoutes: Routes = [
     WijnLijstComponent,
     addBierComponent,
     MenuComponent,
+    BierThumbnail,
+    openBierComponent
+
   ],
   imports: [
     BrowserModule,

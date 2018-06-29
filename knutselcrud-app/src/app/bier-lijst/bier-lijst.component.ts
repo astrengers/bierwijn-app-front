@@ -11,7 +11,7 @@ import {Bier} from "../add-bier/bier.model";
 })
 export class BierLijstComponent implements OnInit {
 
-  bier: Array<any>;
+  bieren: Array<any>;
 
 
   constructor(private bierService: BierService, private modalService: NgbModal) { }
@@ -31,14 +31,14 @@ export class BierLijstComponent implements OnInit {
 
   public getBierLijst(){
   this.bierService.getAllBier().subscribe(data => {
-    this.bier = data;
+    this.bieren = data;
 
   })}
 
   deleteBier(bier: Bier): void {
     this.bierService.deleteBier(bier)
       .subscribe( data => {
-        this.bier = this.bier.filter(u => u !== bier);
+        this.bieren = this.bieren.filter(u => u !== bier);
         this.getBierLijst();
       })
   };
