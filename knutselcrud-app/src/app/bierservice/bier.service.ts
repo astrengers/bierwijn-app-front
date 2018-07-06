@@ -27,5 +27,6 @@ export class BierService {
   public deleteBier(bier) {
     return this.http.delete("http://localhost:8080/bier/" + bier);
   }
+
 }
 
