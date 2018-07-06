@@ -27,4 +27,5 @@ export class BierPaginaComponent implements OnInit {
       this.bier = data;
     })
   };
+
 }
