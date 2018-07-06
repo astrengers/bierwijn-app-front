@@ -10,7 +10,7 @@ import {Bier} from "../add-bier/bier.model";
       <div class="row">
         <div style="..." class="col-md-5"> {{bier?.naam}} </div>
         <div style="..." class="col-md-2"> {{bier?.alcoholPercentage}}% </div>
-        <div style="..." class="col-md-4"> {{bier?.merkNaam}} </div>
+        <div style="..." class="col-md-5"> {{bier?.merkNaam}} </div>
       </div>
   `
   })

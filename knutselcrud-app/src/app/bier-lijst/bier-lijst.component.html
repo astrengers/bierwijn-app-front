@@ -6,9 +6,14 @@
   <div class="col-6" align="center">
       <h2>-->Bier-lijst</h2>
       <div class="list-container">
+
         <div class="list-group-item" *ngFor="let bier of bieren">
-          <bier-thumbnail (click)="handleThumbnailClick(bier.naam)" [bier]="bier"></bier-thumbnail>
-          <div style="..."><button class="btn btn-danger" (click)="deleteBier(bier.id)"> X </button></div>
+          <div class="row">
+
+          <bier-thumbnail class="col-10" (click)="handleThumbnailClick(bier.naam)" [bier]="bier"></bier-thumbnail>
+
+          <div class="col-2" style="..."><button class="btn btn-danger" (click)="deleteBier(bier.id)"> X </button></div>
+        </div>
         </div>
       </div>
     </div>
