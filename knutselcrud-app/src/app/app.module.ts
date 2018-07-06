@@ -14,8 +14,7 @@ import {NgbActiveModal, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {RouterModule, Routes} from '@angular/router';
 import {MenuComponent} from './menu/menu.component';
 import {BierThumbnail} from "./bier-lijst/bier-thumbnail";
-import {openBierComponent} from "./open-bier/open-bier.component";
-import { BierPaginaComponent } from './bier-pagina/bier-pagina.component';
+import {BierPaginaComponent} from './bier-pagina/bier-pagina.component';
 
 const appRoutes: Routes = [
   { path: '', component: DrankenAppComponent},
@@ -33,7 +32,6 @@ const appRoutes: Routes = [
     addBierComponent,
     MenuComponent,
     BierThumbnail,
-    openBierComponent,
     BierPaginaComponent
 
   ],

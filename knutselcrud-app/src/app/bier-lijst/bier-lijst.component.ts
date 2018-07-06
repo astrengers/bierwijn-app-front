@@ -13,7 +13,6 @@ export class BierLijstComponent implements OnInit {
 
   bieren: Array<Bier>;
 
-
   constructor(private bierService: BierService, private modalService: NgbModal) { }
 
   ngOnInit() {
@@ -39,7 +38,7 @@ export class BierLijstComponent implements OnInit {
   }
 
   public openBierMetid(id:number){
-    this.bierService.getBier();
+    this.bierService.getBier(id);
   }
 
 
