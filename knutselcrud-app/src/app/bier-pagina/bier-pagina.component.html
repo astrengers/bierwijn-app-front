@@ -1,10 +1,19 @@
 <div align="center">
   <app-menu></app-menu>
 </div>
+<br>
+<br>
 
+<div class="row">
+  <div class="col-3">
+  </div>
 
-<h2>{{bier?.merkNaam | json}}</h2>
-<h2>{{bier | json}}</h2>
-<h3>{{bierstring | json}}</h3>
+  <div class="col-6">
+    <div>Naam: {{bier.naam}}  {{bier.alcoholPercentage}} %</div>
+    <div>Merk: {{bier.merkNaam}}</div>
 
-HALLO
+  </div>
+
+  <div class="col-3">
+  </div>
+</div>
