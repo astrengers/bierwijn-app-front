@@ -11,12 +11,17 @@ import {Bier} from "../add-bier/bier.model";
 })
 export class BierPaginaComponent implements OnInit {
 
-  bier: any;
+  bier: Bier;
 
   constructor(private bierService: BierService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-     this.bier = this.bierService.getBier();
+    this.getBier();
+     
     }
+
+  public getBier() {
+    this.bier = this.bierService.getBier();
   }
+}
 

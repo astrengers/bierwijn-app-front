@@ -13,7 +13,7 @@ export class BierService {
   constructor(private http: HttpClient) {
   }
 
-  public getBier(): any {
+  public getBier() {
     return this.http.get("http://localhost:8080/bierid/1")
   }
 
