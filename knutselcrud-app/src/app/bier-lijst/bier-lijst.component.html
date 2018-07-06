@@ -1,16 +1,19 @@
+<div align="center">
 <app-menu></app-menu>
-<div class="row">
+</div>
+
+  <div class="row" align="center">
   <div class="col-3">
   </div>
 
-  <div class="col-6" align="center">
-      <h2>-->Bier-lijst</h2>
+  <div class="col-6">
+      <h3>-->Bier-lijst</h3>
       <div class="list-container">
 
         <div class="list-group-item" *ngFor="let bier of bieren">
           <div class="row">
 
-          <bier-thumbnail class="col-10" (click)="handleThumbnailClick(bier.naam)" [bier]="bier"></bier-thumbnail>
+          <bier-thumbnail class="col-10" (click)="openBierMetid(bier.id)" [bier]="bier"></bier-thumbnail>
 
           <div class="col-2" style="..."><button class="btn btn-danger" (click)="deleteBier(bier.id)"> X </button></div>
         </div>

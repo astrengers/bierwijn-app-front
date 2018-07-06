@@ -1,5 +1,5 @@
 export class Bier {
-  // id: number;
+  id: number;
   naam: string;
   alcoholPercentage: number;
   merkNaam: string;

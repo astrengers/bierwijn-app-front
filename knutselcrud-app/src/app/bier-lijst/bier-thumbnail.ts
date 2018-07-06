@@ -25,8 +25,4 @@ import {Bier} from "../add-bier/bier.model";
 
   ngOnInit() {
   }
-
-
-
-
   }

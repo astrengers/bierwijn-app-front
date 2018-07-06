@@ -22,18 +22,13 @@ export class BierLijstComponent implements OnInit {
 
   open(){
     const modalRef = this.modalService.open(addBierComponent);
-  modalRef.componentInstance.name = 'World';
-}
-
-  openBierMetid(bierId){
-
+    modalRef.componentInstance.name = 'World';
   }
 
   public getBierLijst(){
-  this.bierService.getAllBier().subscribe(data => {
-    this.bieren = data;
-
-  })}
+    this.bierService.getAllBier().subscribe(data => {
+      this.bieren = data;
+    })}
 
   deleteBier(bier: Bier): void {
     this.bierService.deleteBier(bier)
@@ -41,5 +36,11 @@ export class BierLijstComponent implements OnInit {
         this.bieren = this.bieren.filter(u => u !== bier);
         this.getBierLijst();
       })
-  };
+  }
+
+  public openBierMetid(id:number){
+    this.bierService.getBier();
+  }
+
+
 }
