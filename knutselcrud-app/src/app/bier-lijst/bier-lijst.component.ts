@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { BierServiceService } from "../bier-service/bier-service.service";
+import {Component, OnInit} from '@angular/core';
+import {BierService} from "../bierservice/bier.service";
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {addBierComponent} from "../add-bier/add-bier.component";
+import {Bier} from "../add-bier/bier.model";
 
 @Component({
   selector: 'app-bier-lijst',
@@ -8,14 +11,35 @@ import { BierServiceService } from "../bier-service/bier-service.service";
 })
 export class BierLijstComponent implements OnInit {
 
-  bier: Array<any>;
+  bieren: Array<Bier>;
 
-  constructor(private bierService: BierServiceService) { }
+  constructor(private bierService: BierService, private modalService: NgbModal) { }
 
   ngOnInit() {
-    this.bierService.getAllBier().subscribe(data => {
-      this.bier = data;
-    })
+    this.getBierLijst();
   }
+
+  open(){
+    const modalRef = this.modalService.open(addBierComponent);
+    modalRef.componentInstance.name = 'World';
+  }
+
+  public getBierLijst(){
+    this.bierService.getAllBier().subscribe(data => {
+      this.bieren = data;
+    })}
+
+  deleteBier(bier: Bier): void {
+    this.bierService.deleteBier(bier)
+      .subscribe( data => {
+        this.bieren = this.bieren.filter(u => u !== bier);
+        this.getBierLijst();
+      })
+  }
+
+  public openBierMetid(id:number){
+    this.bierService.getBier(id);
+  }
+
 
 }
