@@ -12,12 +12,17 @@
     <div>Naam: {{bier.naam}}  {{bier.alcoholPercentage}} %</div>
     <div>Merk: {{bier.merkNaam}}</div>
     <br>
-    <div>Plaatje: <img src="localhost:8080/bier/{{bier.id}}/plaatje">
+    <div>Plaatje: <img src="http://localhost:8080/bier/{{bier.id}}/plaatje"></div>
+    <div align="center" style="color: #ffffff; background: #4f84ce" >
+      <p-fileUpload name="plaatje" url="http://localhost:8080/bier/{{bier.id}}/plaatje"></p-fileUpload>
+
     </div>
 
     <br>
     <div>Opmerkingen:</div>
   </div>
+
+
 
   <div class="col-3">
   </div>

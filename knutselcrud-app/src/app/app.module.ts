@@ -15,6 +15,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {MenuComponent} from './menu/menu.component';
 import {BierThumbnail} from "./bier-lijst/bier-thumbnail";
 import {BierPaginaComponent} from './bier-pagina/bier-pagina.component';
+import {FileUploadModule} from "primeng/primeng";
 
 const appRoutes: Routes = [
   { path: '', component: DrankenAppComponent},
@@ -41,7 +42,8 @@ const appRoutes: Routes = [
     FormsModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(
-      appRoutes)
+      appRoutes),
+    FileUploadModule
   ],
   exports:[
     BierLijstComponent,
