@@ -8,14 +8,13 @@ import {BierLijstComponent} from "./bier-lijst.component";
 @Component({
   selector: 'bier-thumbnail',
   template: `
-    <div class="col-11" [routerLink]="['/bier-lijst', bier.id]" class="well hoverwell thumbnail">
+    <div class="col-12" [routerLink]="['/bier-lijst', bier.id]" class="well hoverwell thumbnail">
       <div class="row">
         <div style="..." class="col-md-5"> {{bier?.naam}} </div>
         <div style="..." class="col-md-2"> {{bier?.alcoholPercentage}}% </div>
         <div style="..." class="col-md-5"> {{bier?.merkNaam}} </div>
       </div>
-      <div style="..." class="col-md-1"><button class="btn btn-danger" (click)="deleteBier(bier.id)"> X </button></div>
-    </div>
+    </div>    
   `
   })
 
