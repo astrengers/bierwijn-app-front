@@ -42,4 +42,5 @@ export class BierLijstComponent implements OnInit {
   }
 
 
+
 }

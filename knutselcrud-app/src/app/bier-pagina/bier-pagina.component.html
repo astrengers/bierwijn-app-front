@@ -12,18 +12,19 @@
     <div>Naam: {{bier.naam}}  {{bier.alcoholPercentage}} %</div>
     <div>Merk: {{bier.merkNaam}}</div>
     <br>
-    <div>Plaatje: <img src="http://localhost:8080/bier/{{bier.id}}/plaatje"></div>
-    <div align="center" style="color: #ffffff; background: #4f84ce" >
-      <p-fileUpload name="plaatje" url="http://localhost:8080/bier/{{bier.id}}/plaatje"></p-fileUpload>
-
-    </div>
-
+    <div>Plaatje: </div>
+    <img src="http://localhost:8080/bier/{{bier.id}}/plaatje">
     <br>
     <div>Opmerkingen:</div>
   </div>
 
 
 
+
+
   <div class="col-3">
+    <angular-file-uploader
+      [config]="afuConfig">
+    </angular-file-uploader>
   </div>
 </div>

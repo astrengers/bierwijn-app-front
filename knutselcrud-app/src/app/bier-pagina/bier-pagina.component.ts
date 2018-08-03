@@ -28,4 +28,10 @@ export class BierPaginaComponent implements OnInit {
     })
   };
 
+  afuConfig = {
+    uploadAPI: {
+      url:"http://localhost:8080/bier/" +this.route.snapshot.paramMap.get('id') + "/plaatje"
+    }
+  };
+
 }
