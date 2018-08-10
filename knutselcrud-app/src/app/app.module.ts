@@ -15,7 +15,9 @@ import {RouterModule, Routes} from '@angular/router';
 import {MenuComponent} from './menu/menu.component';
 import {BierThumbnail} from "./bier-lijst/bier-thumbnail";
 import {BierPaginaComponent} from './bier-pagina/bier-pagina.component';
-import { AngularFileUploaderModule } from "angular-file-uploader";
+import {AngularFileUploaderModule} from "angular-file-uploader";
+import {AddWijnComponent} from './add-wijn/add-wijn.component';
+import {WijnThumbnail} from "./wijn-lijst/wijn-thumbnail";
 
 const appRoutes: Routes = [
   { path: '', component: DrankenAppComponent},
@@ -33,7 +35,9 @@ const appRoutes: Routes = [
     addBierComponent,
     MenuComponent,
     BierThumbnail,
-    BierPaginaComponent
+    WijnThumbnail,
+    BierPaginaComponent,
+    AddWijnComponent
 
   ],
   imports: [
@@ -51,6 +55,6 @@ const appRoutes: Routes = [
   ],
   providers: [BierService, WijnService, HttpClientModule, NgbActiveModal],
   bootstrap: [AppComponent],
-  entryComponents: [addBierComponent]
+  entryComponents: [addBierComponent, AddWijnComponent]
 })
 export class AppModule { }
