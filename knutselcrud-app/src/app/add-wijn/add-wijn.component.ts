@@ -13,7 +13,6 @@ export class AddWijnComponent {
   wijn: Wijn = new Wijn();
 
   constructor(private wijnService: WijnService, public activeModal: NgbActiveModal) {
-
   }
 
 
