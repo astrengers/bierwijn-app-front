@@ -18,15 +18,12 @@ import {BierPaginaComponent} from './bier-pagina/bier-pagina.component';
 import {AngularFileUploaderModule} from "angular-file-uploader";
 import {AddWijnComponent} from './add-wijn/add-wijn.component';
 import {WijnThumbnail} from "./wijn-lijst/wijn-thumbnail";
-import {LoginComponent} from './login/login.component';
-import {AppService} from "./app.service";
 
 const appRoutes: Routes = [
   { path: '', component: DrankenAppComponent},
   { path: 'bier-lijst', component: BierLijstComponent },
   { path: 'bier-lijst/:id', component: BierPaginaComponent},
   { path: 'wijn-center', component: WijnLijstComponent },
-  { path: 'login', component: LoginComponent}
 ];
 
 @NgModule({
@@ -41,8 +38,6 @@ const appRoutes: Routes = [
     WijnThumbnail,
     BierPaginaComponent,
     AddWijnComponent,
-    LoginComponent
-
   ],
   imports: [
     BrowserModule,
@@ -57,7 +52,7 @@ const appRoutes: Routes = [
     BierLijstComponent,
     RouterModule
   ],
-  providers: [BierService, WijnService, HttpClientModule, NgbActiveModal, AppService],
+  providers: [BierService, WijnService, HttpClientModule, NgbActiveModal],
   bootstrap: [AppComponent],
   entryComponents: [addBierComponent, AddWijnComponent]
 })

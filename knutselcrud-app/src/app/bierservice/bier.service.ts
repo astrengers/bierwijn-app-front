@@ -9,15 +9,17 @@ const httpOptions = {
 @Injectable()
 export class BierService {
 
+  private drankenUrl = "/dranken";
+
   constructor(private http: HttpClient) {
   }
 
   public getBier(id:number) : Observable<any> {
-    return this.http.get("http://localhost:8080/bierid/"+id);
+    return this.http.get(this.drankenUrl+"/bierid/"+id);
   }
 
   public getAllBier(): Observable<any> {
-    return this.http.get("http://localhost:8080/bier");
+    return this.http.get(this.drankenUrl+"/bier");
   }
 
   public addBier(bier){
