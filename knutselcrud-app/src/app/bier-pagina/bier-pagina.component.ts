@@ -3,6 +3,7 @@ import {BierService} from "../bierservice/bier.service";
 import {ActivatedRoute} from '@angular/router';
 import {Bier} from "../add-bier/bier.model";
 
+
 // import {Bier} from "../add-bier/bier.model";
 
 @Component({

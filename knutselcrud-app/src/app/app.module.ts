@@ -18,6 +18,8 @@ import {BierPaginaComponent} from './bier-pagina/bier-pagina.component';
 import {AngularFileUploaderModule} from "angular-file-uploader";
 import {AddWijnComponent} from './add-wijn/add-wijn.component';
 import {WijnThumbnail} from "./wijn-lijst/wijn-thumbnail";
+import { ColorPickerModule } from 'ngx-color-picker';
+
 
 const appRoutes: Routes = [
   { path: '', component: DrankenAppComponent},
@@ -46,7 +48,9 @@ const appRoutes: Routes = [
     NgbModule.forRoot(),
     RouterModule.forRoot(
       appRoutes),
-    AngularFileUploaderModule
+    AngularFileUploaderModule,
+    ColorPickerModule
+
   ],
   exports:[
     BierLijstComponent,
