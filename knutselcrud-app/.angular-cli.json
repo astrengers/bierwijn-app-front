@@ -22,7 +22,11 @@
         "styles.css",
         "bootstrap.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.js",
+        "../node_modules/@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js"
+
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
