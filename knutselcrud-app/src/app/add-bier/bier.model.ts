@@ -3,5 +3,8 @@ export class Bier {
   naam: string;
   alcoholPercentage: number;
   merkNaam: string;
+  brouwerij: string;
+  hopSoort: string;
+  bierSoort: string;
   kleur: string;
 }
