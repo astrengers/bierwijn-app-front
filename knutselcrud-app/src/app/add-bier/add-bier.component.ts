@@ -18,8 +18,8 @@ export class addBierComponent{
 
   }
 
-  createBier(): void {
-    this.bierService.addBier(this.bier)
+  createBier(bier): void {
+    this.bierService.addBier(bier)
       .subscribe(data => {
         location.reload();
 

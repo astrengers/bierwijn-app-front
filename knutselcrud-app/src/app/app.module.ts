@@ -19,6 +19,7 @@ import {AngularFileUploaderModule} from "angular-file-uploader";
 import {AddWijnComponent} from './add-wijn/add-wijn.component';
 import {WijnThumbnail} from "./wijn-lijst/wijn-thumbnail";
 import { ColorPickerModule } from 'ngx-color-picker';
+import {ReviewService} from "./reviewservice/review.service";
 
 
 const appRoutes: Routes = [
@@ -56,7 +57,7 @@ const appRoutes: Routes = [
     BierLijstComponent,
     RouterModule
   ],
-  providers: [BierService, WijnService, HttpClientModule, NgbActiveModal],
+  providers: [BierService, WijnService, HttpClientModule, NgbActiveModal, ReviewService],
   bootstrap: [AppComponent],
   entryComponents: [addBierComponent, AddWijnComponent]
 })

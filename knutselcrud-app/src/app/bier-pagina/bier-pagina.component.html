@@ -9,24 +9,35 @@
   </div>
 
   <div class="col-6">
-    <div>Naam: {{bier.naam}}  {{bier.alcoholPercentage}} %</div>
+    <div>Naam: {{bier.naam}} {{bier.alcoholPercentage}} %</div>
     <div>Merk: {{bier.merkNaam}}</div>
     <br>
-    <div>Plaatje: </div>
+    <div>Plaatje:</div>
     <img src="http://localhost:8080/bier/{{bier.id}}/plaatje">
     <br>
     <div>Opmerkingen:</div>
-
-
     <div id="divpreview" [style.background]="bier.kleur">&nbsp;</div>
 
 
+    <div id="review">
+      <form>
+        <div class="form-group">
+          <label for="gebruiker">Gebruiker</label>
+          <input [(ngModel)]="review.gebruiker" placeholder="Gebruiker" name="gebruiker" type="text" class="form-control" id="gebruiker" required>
+        </div>
+        <div class="form-group">
+          <label for="reviewtekst">Beschrijving</label>
+          <input [(ngModel)]="review.reviewTekst" placeholder="Beschrijving" name="beschrijving" type="text" class="form-control" id="beschrijving" required>
+        </div>
+        <div class="form-group">
+          <label for="cijfer">Cijfer</label>
+          <input [(ngModel)]="review.cijfer" placeholder="Cijfer" name="cijfer" type="number" class="form-control" id="cijfer" required>
+        </div>
 
-
+        <button class="btn btn-success" (click)="addReview()">Laat uw review achter</button>
+      </form>
+    </div>
   </div>
-
-
-
 
 
   <div class="col-3">

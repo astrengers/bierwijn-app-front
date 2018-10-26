@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {BierService} from "../bierservice/bier.service";
 import {ActivatedRoute} from '@angular/router';
 import {Bier} from "../add-bier/bier.model";
+import {Review} from "../reviewservice/review.model";
+import {ReviewService} from "../reviewservice/review.service";
 
 
 // import {Bier} from "../add-bier/bier.model";
@@ -14,9 +16,10 @@ import {Bier} from "../add-bier/bier.model";
 
 export class BierPaginaComponent implements OnInit {
 
-  bier: Array <Bier>;
+  bier: Bier;
+  review: Review = new Review();
 
-  constructor(private bierService: BierService, private route: ActivatedRoute) {
+  constructor(private bierService: BierService, private reviewService: ReviewService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
@@ -28,6 +31,13 @@ export class BierPaginaComponent implements OnInit {
       this.bier = data;
     })
   };
+
+  public addReview(): void {
+    this.review.drank = this.bier;
+    this.reviewService.addReview(this.review).subscribe(data => {
+      location.reload();
+    });
+  }
 
   afuConfig = {
     uploadAPI: {

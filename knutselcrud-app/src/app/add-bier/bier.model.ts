@@ -1,8 +1,6 @@
-export class Bier {
-  id: number;
-  naam: string;
-  alcoholPercentage: number;
-  merkNaam: string;
+import {Drank} from "../models/drank.model";
+
+export class Bier extends Drank{
   brouwerij: string;
   hopSoort: string;
   bierSoort: string;
