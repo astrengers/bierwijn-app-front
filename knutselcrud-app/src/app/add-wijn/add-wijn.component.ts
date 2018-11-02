@@ -3,6 +3,8 @@ import {Component} from "@angular/core";
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {WijnService} from "../wijnservice/wijn.service";
 import {Wijn} from "./wijn.model";
+import {Land} from "../landenlijst/land.model";
+import {LandenlijstService} from "../landenlijst/landenlijst.service";
 
 @Component({
   templateUrl: './wijn-formulier.html',
@@ -11,8 +13,15 @@ import {Wijn} from "./wijn.model";
 export class AddWijnComponent {
 
   wijn: Wijn = new Wijn();
+  landen: Array<Land>;
 
-  constructor(private wijnService: WijnService, public activeModal: NgbActiveModal) {
+  constructor(private wijnService: WijnService,
+              private landenlijst: LandenlijstService,
+              public activeModal: NgbActiveModal) {
+  }
+
+  ngOnInit(){
+    this.getLandenLijst()
   }
 
 
@@ -23,4 +32,10 @@ export class AddWijnComponent {
 
       });
   }
+
+
+  public getLandenLijst(){
+    this.landenlijst.getLandenLijst().subscribe(data => {
+      this.landen = data;
+    })}
 }

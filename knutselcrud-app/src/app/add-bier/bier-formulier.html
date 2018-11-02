@@ -1,11 +1,10 @@
 <div class="modal-header">
-  <h4 class="modal-title">Modal title</h4>
+  <h4 class="modal-title">Voeg bier toe</h4>
   <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
 <div class="modal-body">
-  <h2 class="text-center">Voeg bier toe</h2>
   <form>
     <div class="form-group">
       <label for="naam">Naam:</label>
@@ -36,8 +35,10 @@
     </div>
 
     <div class="form-group">
-      <label for="hopSoort">Hopsoort:</label>
-      <input [(ngModel)]="bier.hopSoort" placeholder="HopSoort" name="hopSoort" class="form-control" id="hopSoort">
+      <label for="land">Land:</label>
+      <select [(ngModel)]="bier.land" name="land" class="form-control" id="land">
+        <option *ngFor="let land of landen" [ngValue]="land.naam">{{land.naam}}</option>
+      </select>
     </div>
 
     <div class="form-group">

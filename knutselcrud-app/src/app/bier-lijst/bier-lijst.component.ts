@@ -13,14 +13,15 @@ export class BierLijstComponent implements OnInit {
 
   bieren: Array<Bier>;
 
-  constructor(private bierService: BierService, private modalService: NgbModal) { }
+  constructor(private bierService: BierService,
+              private modalService: NgbModal) { }
 
   ngOnInit() {
     this.getBierLijst();
   }
 
   open(){
-    const modalRef = this.modalService.open(addBierComponent);
+    const modalRef = this.modalService.open(addBierComponent,{backdrop:"static"});
     modalRef.componentInstance.name = 'World';
   }
 

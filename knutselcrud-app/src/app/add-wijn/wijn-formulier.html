@@ -1,11 +1,11 @@
   <div class="modal-header">
-    <h4 class="modal-title">Modal title</h4>
+    <h4 class="modal-title">Voeg wijn toe</h4>
     <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="modal-body">
-    <h2 class="text-center">Voeg wijn toe</h2>
+
     <form>
       <div class="form-group">
         <label for="naam">Naam:</label>
@@ -21,6 +21,34 @@
         <label for="merkNaam">Merk:</label>
         <input [(ngModel)]="wijn.merkNaam" placeholder="Merk" name="merkNaam" class="form-control" id="merkNaam">
       </div>
+
+      <div class="form-group">
+        <label for="merkNaam">Druif:</label>
+        <input [(ngModel)]="wijn.druif" placeholder="Druivensoort" name="druif" class="form-control" id="druivensoort">
+      </div>
+
+      <div class="form-group">
+        <label for="merkNaam">Soort:</label>
+        <input [(ngModel)]="wijn.soort" placeholder="Wijnsoort" name="soort" class="form-control" id="wijnsoort">
+      </div>
+
+      <div class="form-group">
+        <label for="land">Land:</label>
+        <select [(ngModel)]="wijn.land" name="land" class="form-control" id="land">
+          <option *ngFor="let land of landen" [ngValue]="land.naam">{{land.naam}}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="merkNaam">Streek:</label>
+        <input [(ngModel)]="wijn.streek" placeholder="Streek" name="streek" class="form-control" id="streek">
+      </div>
+
+      <div class="form-group">
+        <label for="alcoholPercentage">Kleur:</label>
+        <input [(colorPicker)]="wijn.kleur" [style.background]="wijn.kleur"/>
+      </div>
+
 
       <button class="btn btn-success" (click)="createWijn()">Voeg wijn toe</button>
     </form>

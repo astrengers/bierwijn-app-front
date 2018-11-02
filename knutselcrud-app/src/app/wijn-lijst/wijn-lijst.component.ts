@@ -13,14 +13,15 @@ export class WijnLijstComponent implements OnInit {
 
   wijnen: Array<Wijn>;
 
-  constructor(private wijnService: WijnService, private modalService: NgbModal) { }
+  constructor(private wijnService: WijnService,
+              private modalService: NgbModal) { }
 
   ngOnInit() {
     this.getWijnLijst();
   }
 
   open(){
-    const modalRef = this.modalService.open(AddWijnComponent);
+    const modalRef = this.modalService.open(AddWijnComponent,{backdrop:"static"});
     modalRef.componentInstance.name = 'World';
   }
 
