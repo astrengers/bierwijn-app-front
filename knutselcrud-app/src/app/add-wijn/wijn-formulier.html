@@ -33,8 +33,10 @@
       </div>
 
       <div class="form-group">
-        <label for="merkNaam">Land:</label>
-        <input [(ngModel)]="wijn.land" placeholder="Land" name="land" class="form-control" id="land">
+        <label for="land">Land:</label>
+        <select [(ngModel)]="wijn.land" name="land" class="form-control" id="land">
+          <option *ngFor="let land of landen" [ngValue]="land.naam">{{land.naam}}</option>
+        </select>
       </div>
 
       <div class="form-group">

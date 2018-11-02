@@ -13,7 +13,8 @@ export class WijnLijstComponent implements OnInit {
 
   wijnen: Array<Wijn>;
 
-  constructor(private wijnService: WijnService, private modalService: NgbModal) { }
+  constructor(private wijnService: WijnService,
+              private modalService: NgbModal) { }
 
   ngOnInit() {
     this.getWijnLijst();

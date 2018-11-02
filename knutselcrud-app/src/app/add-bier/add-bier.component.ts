@@ -30,7 +30,6 @@ export class addBierComponent implements OnInit {
     this.bierService.addBier(bier)
       .subscribe(data => {
         location.reload();
-
       });
   }
 
