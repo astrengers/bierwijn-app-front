@@ -20,7 +20,7 @@ export class WijnLijstComponent implements OnInit {
   }
 
   open(){
-    const modalRef = this.modalService.open(AddWijnComponent);
+    const modalRef = this.modalService.open(AddWijnComponent,{backdrop:"static"});
     modalRef.componentInstance.name = 'World';
   }
 

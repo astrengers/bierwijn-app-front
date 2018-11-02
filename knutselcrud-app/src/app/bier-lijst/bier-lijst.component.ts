@@ -20,7 +20,7 @@ export class BierLijstComponent implements OnInit {
   }
 
   open(){
-    const modalRef = this.modalService.open(addBierComponent);
+    const modalRef = this.modalService.open(addBierComponent,{backdrop:"static"});
     modalRef.componentInstance.name = 'World';
   }
 
