@@ -17,13 +17,15 @@ import {ReviewService} from "../reviewservice/review.service";
 export class BierPaginaComponent implements OnInit {
 
   bier: Bier;
-  review: Review = new Review();
+  newReview: Review = new Review();
+  gevondenReview: Array<Review>;
 
   constructor(private bierService: BierService, private reviewService: ReviewService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
     this.getBier(+this.route.snapshot.paramMap.get('id'));
+    this.getReviewForBier(+this.route.snapshot.paramMap.get('id'));
   }
 
   public getBier(id: number) {
@@ -33,11 +35,17 @@ export class BierPaginaComponent implements OnInit {
   };
 
   public addReview(): void {
-    this.review.drank = this.bier;
-    this.reviewService.addReview(this.review).subscribe(data => {
+    this.newReview.drank = this.bier;
+    this.reviewService.addReview(this.newReview).subscribe(data => {
       location.reload();
     });
   }
+
+  public getReviewForBier(id: number) {
+    this.reviewService.getReview(id).subscribe(data =>{
+      this.gevondenReview = data;
+    })
+  };
 
   afuConfig = {
     uploadAPI: {

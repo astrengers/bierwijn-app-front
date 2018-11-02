@@ -30,4 +30,8 @@ export class ReviewService {
     return this.http.delete("http://localhost:8080/review/{id}" + review);
   }
 
+  public getReview(id: number): Observable<any> {
+    return this.http.get("http://localhost:8080/review/" + id);
+  }
+
 }
