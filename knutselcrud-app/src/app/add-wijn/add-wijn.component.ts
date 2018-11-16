@@ -14,6 +14,7 @@ export class AddWijnComponent {
 
   wijn: Wijn = new Wijn();
   landen: Array<Land>;
+  fileToUpload: File = null;
 
   constructor(private wijnService: WijnService,
               private landenlijst: LandenlijstService,
@@ -24,18 +25,17 @@ export class AddWijnComponent {
     this.getLandenLijst()
   }
 
-
-  createWijn(): void {
-    this.wijnService.addWijn(this.wijn)
-      .subscribe(data => {
+  createWijn(wijn): void {
+    this.wijnService.addWijnWithFile(wijn, this.fileToUpload);
         location.reload();
-
-      });
   }
-
 
   public getLandenLijst(){
     this.landenlijst.getLandenLijst().subscribe(data => {
       this.landen = data;
     })}
+
+  handleFileInput(files: FileList) {
+    this.fileToUpload = files.item(0);
+  }
 }
