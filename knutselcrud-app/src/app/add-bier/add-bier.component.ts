@@ -28,7 +28,8 @@ export class addBierComponent implements OnInit {
   }
 
   createBier(bier): void {
-    this.bierService.addBier(bier)
+    // this.bier.plaatje = this.fileToUpload;
+    this.bierService.addBierWithFile(bier, this.fileToUpload)
       .subscribe(data => {
         location.reload();
       });
@@ -53,14 +54,14 @@ export class addBierComponent implements OnInit {
 //       console.log(error);
 //     });
 //   }
-  // UPLOADSERVICE AANMAKEN //
-  // postFile(fileToUpload: File): Observable<boolean> {
-  //   const endpoint = 'your-destination-url';
-  //   const formData: FormData = new FormData();
-  //   formData.append('fileKey', fileToUpload, fileToUpload.name);
-  //   return this.httpClient
-  //     .post(endpoint, formData, { headers: yourHeadersConfig })
-  //     .map(() => { return true; })
-  //     .catch((e) => this.handleError(e));
-  // }
+//   UPLOADSERVICE AANMAKEN //
+//   postFile(fileToUpload: File): Observable<boolean> {
+//     const endpoint = 'your-destination-url';
+//     const formData: FormData = new FormData();
+//     formData.append('fileKey', fileToUpload, fileToUpload.name);
+//     return this.httpClient
+//       .post(endpoint, formData, { headers: yourHeadersConfig })
+//       .map(() => { return true; })
+//       .catch((e) => this.handleError(e));
+//   }
 }
