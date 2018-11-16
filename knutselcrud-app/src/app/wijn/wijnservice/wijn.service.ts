@@ -41,6 +41,6 @@ export class WijnService {
   public voegPlaatjeToeAanWijn(file, id): Observable<boolean> {
     const formData = new FormData();
     formData.append('file', file);
-    return this.http.post<boolean>("http://localhost:8080/wijn/" + id + "/plaatje", formData);
+    return this.http.post<boolean>("http://localhost:8080/wijnid/" + id + "/plaatje", formData);
   }
 }
