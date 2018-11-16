@@ -9,7 +9,8 @@ const httpOptions = {
 @Injectable()
 export class WijnService {
 
-  private drankenUrl ="/dranken";
+  private drankenUrl = "/dranken";
+
   constructor(private http: HttpClient) {
   }
 

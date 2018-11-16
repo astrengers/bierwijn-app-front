@@ -1,4 +1,25 @@
 <div align="center">
+  <div class="row" align="center">
+    <div class="col-3">
+    </div>
+
+    <div class="col-5">
+      <div class="form-group">
+      <input [(ngModel)]="bieren.merk" name="merkNaam" class="form-control" id="merkNaam" [(ngModel)]=query (keyup)=findbeers()>
+      </div>
+    </div>
+
+    <div class="col-1">
+      <button class="btn btn-success" (click)="search(bier)">Search</button>
+
+    </div>
+
+    <div class="col-3">
+    </div>
+
+
+  </div>
+
 <app-menu></app-menu>
 </div>
 
