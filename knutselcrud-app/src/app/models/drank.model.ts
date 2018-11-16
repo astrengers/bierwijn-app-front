@@ -7,4 +7,5 @@ export abstract class Drank {
   merkNaam: string;
   land: Land;
   plaatje: any[];
+  beschrijving: string;
 }
