@@ -18,13 +18,8 @@
         <b>Algemene beschrijving:</b><div> {{bier.beschrijving}}</div>
       </div>
       <div class="col-6">
-        <div class="container" style="display: flex; justify-content: center">
-          <div *ngIf="bier.plaatje != undefined; else nepPlaatje">
-            <img class="rounded-circle" style='height: 300px; width: 300px; border: solid darkblue; object-fit: contain' src="http://localhost:8080/bier/{{bier.id}}/plaatje">
-          </div>
-          <ng-template #nepPlaatje>
-            <img class="rounded-circle" style='height: 300px; width: 300px; border: solid darkblue; object-fit: contain' src="../../assets/beer.png">
-          </ng-template>
+        <div class="container" style="display: flex; justify-content: center; overflow: hidden">
+            <img class="rounded-circle" style='height: 300px; width: 300px; border: solid darkblue; object-fit: cover' [src]="checkBierPlaatje(bier.id)">
         </div>
       </div>
     </div>

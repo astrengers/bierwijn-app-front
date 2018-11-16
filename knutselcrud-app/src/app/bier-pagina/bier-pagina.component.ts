@@ -47,6 +47,13 @@ export class BierPaginaComponent implements OnInit {
     })
   };
 
+  public checkBierPlaatje(id: number): String {
+    if (this.bier.plaatje != undefined) {
+      return "http://localhost:8080/bier/" + this.bier.id + "/plaatje";
+    }
+    return "../../assets/beer.png"
+    }
+
   afuConfig = {
     uploadAPI: {
       url:"http://localhost:8080/bier/" +this.route.snapshot.paramMap.get('id') + "/plaatje"
