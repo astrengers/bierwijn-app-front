@@ -1,7 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { BierPaginaComponent } from './bier-pagina.component';
-
+import {BierPaginaComponent} from './bier-pagina.component';
 
 
 describe('BierPaginaComponent', () => {

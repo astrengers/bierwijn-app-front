@@ -1,4 +1,4 @@
-import {Drank} from "../models/drank.model";
+import {Drank} from "../../algemeen/models/drank.model";
 
 export class Wijn extends Drank {
   id: number;

@@ -2,25 +2,25 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
-import {DrankenAppComponent} from './dranken-app/dranken-app.component';
-import {BierLijstComponent} from './bier-lijst/bier-lijst.component';
-import {BierService} from "./bierservice/bier.service";
+import {DrankenAppComponent} from './algemeen/dranken-app/dranken-app.component';
+import {BierLijstComponent} from './bier/bier-lijst/bier-lijst.component';
+import {BierService} from "./bier/bierservice/bier.service";
 import {HttpClientModule} from "@angular/common/http";
-import {WijnLijstComponent} from './wijn-lijst/wijn-lijst.component';
-import {WijnService} from "./wijnservice/wijn.service";
-import {addBierComponent} from "./add-bier/add-bier.component";
+import {WijnLijstComponent} from './wijn/wijn-lijst/wijn-lijst.component';
+import {WijnService} from "./wijn/wijnservice/wijn.service";
+import {addBierComponent} from "./bier/add-bier/add-bier.component";
 import {FormsModule} from "@angular/forms";
 import {NgbActiveModal, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {RouterModule, Routes} from '@angular/router';
-import {MenuComponent} from './menu/menu.component';
-import {BierThumbnail} from "./bier-lijst/bier-thumbnail";
-import {BierPaginaComponent} from './bier-pagina/bier-pagina.component';
+import {MenuComponent} from './algemeen/menu/menu.component';
+import {BierThumbnail} from "./bier/bier-lijst/bier-thumbnail";
+import {BierPaginaComponent} from './bier/bier-pagina/bier-pagina.component';
 import {AngularFileUploaderModule} from "angular-file-uploader";
-import {AddWijnComponent} from './add-wijn/add-wijn.component';
-import {WijnThumbnail} from "./wijn-lijst/wijn-thumbnail";
+import {AddWijnComponent} from './wijn/add-wijn/add-wijn.component';
+import {WijnThumbnail} from "./wijn/wijn-lijst/wijn-thumbnail";
 import {ColorPickerModule} from 'ngx-color-picker';
-import {ReviewService} from "./reviewservice/review.service";
-import {LandenlijstService} from "./landenlijst/landenlijst.service";
+import {ReviewService} from "./algemeen/reviewservice/review.service";
+import {LandenlijstService} from "./algemeen/landenlijst/landenlijst.service";
 
 
 const appRoutes: Routes = [

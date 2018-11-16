@@ -3,8 +3,8 @@ import {Component} from "@angular/core";
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {WijnService} from "../wijnservice/wijn.service";
 import {Wijn} from "./wijn.model";
-import {Land} from "../landenlijst/land.model";
-import {LandenlijstService} from "../landenlijst/landenlijst.service";
+import {Land} from "../../algemeen/landenlijst/land.model";
+import {LandenlijstService} from "../../algemeen/landenlijst/landenlijst.service";
 
 @Component({
   templateUrl: './wijn-formulier.html',
