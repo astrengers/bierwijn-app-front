@@ -15,7 +15,7 @@ export class WijnService {
   }
 
   public getWijn(id: number): Observable<any> {
-    return this.http.get("http://localhost:8080/wijn/" + id);
+    return this.http.get("http://localhost:8080/wijnid/" + id);
   }
 
   public getAllWijn(): Observable<any> {

@@ -21,13 +21,15 @@ import {WijnThumbnail} from "./wijn/wijn-lijst/wijn-thumbnail";
 import {ColorPickerModule} from 'ngx-color-picker';
 import {ReviewService} from "./algemeen/reviewservice/review.service";
 import {LandenlijstService} from "./algemeen/landenlijst/landenlijst.service";
+import {WijnPaginaComponent} from "./wijn/wijn-pagina/wijn-pagina.component";
 
 
 const appRoutes: Routes = [
   { path: '', component: DrankenAppComponent},
   { path: 'bier-lijst', component: BierLijstComponent },
   { path: 'bier-lijst/:id', component: BierPaginaComponent},
-  { path: 'wijn-center', component: WijnLijstComponent },
+  { path: 'wijn-lijst', component: WijnLijstComponent },
+  { path: 'wijn-lijst/:id', component: WijnPaginaComponent}
 ];
 
 @NgModule({
@@ -42,6 +44,7 @@ const appRoutes: Routes = [
     WijnThumbnail,
     BierPaginaComponent,
     AddWijnComponent,
+    WijnPaginaComponent
   ],
   imports: [
     BrowserModule,
