@@ -27,12 +27,10 @@ export class addBierComponent implements OnInit {
     this.getLandenLijst();
   }
 
-  createBier(bier): void {
+  createBier(bier) {
     // this.bier.plaatje = this.fileToUpload;
     this.bierService.addBierWithFile(bier, this.fileToUpload)
-      .subscribe(data => {
-        location.reload();
-      });
+    location.reload();
   }
 
   public getLandenLijst(){
