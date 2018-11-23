@@ -26,6 +26,11 @@ export class BierService {
     return this.http.post<number>("http://localhost:8080/bier", bier);
   }
 
+  public wijzigBier(bier){
+    return this.http.post("http://localhost:8080/updatebier", bier);
+  }
+
+
   public addBierWithFile(bier, file)  {
     this.addBier(bier).subscribe(data =>{
         this.voegPlaatjeToeAanBier(file, data).subscribe(data => {

@@ -1,24 +1,23 @@
 import {Component, OnInit} from "@angular/core";
 
-import {Bier} from "../bier.model";
+
 import {Land} from "../../algemeen/landenlijst/land.model";
 import {BierService} from "../bierservice/bier.service";
-import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
-import {BIERSOORTEN} from "../biersoorten.model";
+import {NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {LandenlijstService} from "../../algemeen/landenlijst/landenlijst.service";
+import {Bier} from "../bier.model";
 
 @Component({
-  templateUrl: './bier-formulier.html',
-  selector: 'add-bier'
+  templateUrl: './wijzig-bier-formulier.html',
+  selector: 'wijzig-bier'
 })
-export class addBierComponent implements OnInit {
+export class wijzigBierComponent implements OnInit {
 
-  bier: Bier = new Bier();
-  biersoorten = BIERSOORTEN;
+  eenbier: Bier;
   landen: Array<Land>;
-  fileToUpload: File = null;
 
   constructor(private bierService: BierService,
+              private modalService: NgbModal,
               public activeModal: NgbActiveModal,
               private landenlijst: LandenlijstService) {
   }
@@ -27,18 +26,22 @@ export class addBierComponent implements OnInit {
     this.getLandenLijst();
   }
 
-  createBier(bier): void {
-    // this.bier.plaatje = this.fileToUpload;
-    this.bierService.addBierWithFile(bier, this.fileToUpload);
+  public setBier(id: number) {
+    this.bierService.getBier(id).subscribe(data => {
+      this.eenbier = data;
+    })
+  };
+
+  public wijzigBier(bier): void {
+    this.bierService.wijzigBier(bier);
         location.reload();
   }
+
+
 
   public getLandenLijst(){
     this.landenlijst.getLandenLijst().subscribe(data => {
       this.landen = data;
     })}
 
-  handleFileInput(files: FileList) {
-    this.fileToUpload = files.item(0);
-  }
 }

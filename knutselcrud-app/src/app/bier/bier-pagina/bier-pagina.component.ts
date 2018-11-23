@@ -1,13 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {BierService} from "../bierservice/bier.service";
 import {ActivatedRoute} from '@angular/router';
-import {Bier} from "../add-bier/bier.model";
+import {Bier} from "../bier.model";
 import {Review} from "../../algemeen/reviewservice/review.model";
 import {ReviewService} from "../../algemeen/reviewservice/review.service";
-import {addBierComponent} from "../add-bier/add-bier.component";
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {wijzigBierComponent} from "../wijzig-bier/wijzig-bier.component";
 
-// import {Bier} from "../add-bier/bier.model";
 
 @Component({
   selector: 'app-bier-pagina',
@@ -24,7 +23,8 @@ export class BierPaginaComponent implements OnInit {
   constructor(private bierService: BierService,
               private reviewService: ReviewService,
               private route: ActivatedRoute,
-              private modalService: NgbModal) {
+              private modalService: NgbModal,
+              ) {
   }
 
   ngOnInit() {
@@ -65,8 +65,8 @@ export class BierPaginaComponent implements OnInit {
   };
 
   open(){
-    const modalRef = this.modalService.open(addBierComponent,{backdrop:"static"});
-    modalRef.componentInstance.name = 'WijzigBier';
+    const modalRef = this.modalService.open(wijzigBierComponent,{backdrop:"static"});
+    modalRef.componentInstance.name = 'World';
   }
 
 }

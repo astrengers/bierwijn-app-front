@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core'
 import {ActivatedRoute} from '@angular/router'
 import {BierService} from "../bierservice/bier.service";
-import {Bier} from "../add-bier/bier.model";
+import {Bier} from "../bier.model";
 import {BierLijstComponent} from "./bier-lijst.component";
 
 

@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {BierService} from "../bierservice/bier.service";
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {addBierComponent} from "../add-bier/add-bier.component";
-import {Bier} from "../add-bier/bier.model";
+import {Bier} from "../bier.model";
 
 @Component({
   selector: 'app-bier-lijst',

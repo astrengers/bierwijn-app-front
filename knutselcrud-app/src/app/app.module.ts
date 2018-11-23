@@ -2,13 +2,13 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
-import {DrankenAppComponent} from './algemeen/dranken-app/dranken-app.component';
 import {BierLijstComponent} from './bier/bier-lijst/bier-lijst.component';
 import {BierService} from "./bier/bierservice/bier.service";
 import {HttpClientModule} from "@angular/common/http";
 import {WijnLijstComponent} from './wijn/wijn-lijst/wijn-lijst.component';
 import {WijnService} from "./wijn/wijnservice/wijn.service";
 import {addBierComponent} from "./bier/add-bier/add-bier.component";
+import {wijzigBierComponent} from "./bier/wijzig-bier/wijzig-bier.component";
 import {FormsModule} from "@angular/forms";
 import {NgbActiveModal, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {RouterModule, Routes} from '@angular/router';
@@ -22,6 +22,7 @@ import {ColorPickerModule} from 'ngx-color-picker';
 import {ReviewService} from "./algemeen/reviewservice/review.service";
 import {LandenlijstService} from "./algemeen/landenlijst/landenlijst.service";
 import {WijnPaginaComponent} from "./wijn/wijn-pagina/wijn-pagina.component";
+import {DrankenAppComponent} from "./algemeen/dranken-app/dranken-app.component";
 
 
 const appRoutes: Routes = [
@@ -39,6 +40,7 @@ const appRoutes: Routes = [
     BierLijstComponent,
     WijnLijstComponent,
     addBierComponent,
+    wijzigBierComponent,
     MenuComponent,
     BierThumbnail,
     WijnThumbnail,
@@ -63,6 +65,6 @@ const appRoutes: Routes = [
   ],
   providers: [BierService, WijnService, HttpClientModule, NgbActiveModal, ReviewService, LandenlijstService],
   bootstrap: [AppComponent],
-  entryComponents: [addBierComponent, AddWijnComponent]
+  entryComponents: [addBierComponent, wijzigBierComponent, AddWijnComponent]
 })
 export class AppModule { }
