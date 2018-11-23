@@ -3,11 +3,9 @@
 </div>
 <br>
 <br>
-
 <div class="row">
   <div class="col-2">
   </div>
-
   <div class="col-8">
     <div class="row">
       <div class="col-6">
@@ -18,6 +16,10 @@
         <b>Brouwerij:</b><div>{{bier.brouwerij}}</div>
         <b>Kleur:</b><div style="max-width: 10%" id="divpreview" [style.background]="bier.kleur">&nbsp;</div>
         <b>Algemene beschrijving:</b><div> {{bier.beschrijving}}</div>
+
+        <br>
+        <button class="btn btn-sm btn-outline-secondary" (click)="open()">Wijzig bier</button>
+
       </div>
       <div class="col-6">
         <div class="container" style="display: flex; justify-content: center; overflow: hidden">
@@ -26,8 +28,6 @@
       </div>
     </div>
     <br>
-
-
     <div class="row">
       <div class="col-sm-6">
         <div><h4>Reviews</h4></div>
@@ -80,7 +80,5 @@
   </div>
   <div class="col-2">
   </div>
-</div>
-<div align="center">
-  <button class="btn btn-lg btn-outline-secondary" (click)="open()">Wijzig bier</button>
+
 </div>

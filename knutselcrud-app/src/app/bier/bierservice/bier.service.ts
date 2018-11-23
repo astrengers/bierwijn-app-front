@@ -11,7 +11,17 @@ export class BierService {
 
   private drankenUrl = "/dranken";
 
+  private wijzigId:number;
+
   constructor(private http: HttpClient) {
+  }
+
+  public setWijzigId(id:number){
+    this.wijzigId = id;
+  }
+
+  public getWijzigId(){
+    return this.wijzigId ;
   }
 
   public getBier(id:number) : Observable<any> {
@@ -23,13 +33,12 @@ export class BierService {
   }
 
   public addBier(bier): Observable<number>{
-    return this.http.post<number>("http://localhost:8080/bier", bier);
+    return this.http.post<number>(this.drankenUrl+"/bier", bier);
   }
 
   public wijzigBier(bier){
-    return this.http.post("http://localhost:8080/updatebier", bier);
+    return this.http.put("http://localhost:8080/updatebier", bier);
   }
-
 
   public addBierWithFile(bier, file)  {
     this.addBier(bier).subscribe(data =>{
@@ -45,10 +54,7 @@ export class BierService {
     return this.http.post<boolean>("http://localhost:8080/bier/" + id + "/plaatje", formData);
   }
 
-
   public deleteBier(bier) {
     return this.http.delete("http://localhost:8080/bier/" + bier);
   }
-
 }
-

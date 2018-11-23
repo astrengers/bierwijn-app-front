@@ -1,11 +1,12 @@
 import {Component, OnInit} from "@angular/core";
 
-
 import {Land} from "../../algemeen/landenlijst/land.model";
 import {BierService} from "../bierservice/bier.service";
-import {NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {LandenlijstService} from "../../algemeen/landenlijst/landenlijst.service";
 import {Bier} from "../bier.model";
+import {ActivatedRoute} from "@angular/router";
+import {BIERSOORTEN} from "../biersoorten.model";
 
 @Component({
   templateUrl: './wijzig-bier-formulier.html',
@@ -13,35 +14,36 @@ import {Bier} from "../bier.model";
 })
 export class wijzigBierComponent implements OnInit {
 
-  eenbier: Bier;
+  eenBier: Bier;
   landen: Array<Land>;
+  biersoorten = BIERSOORTEN;
 
   constructor(private bierService: BierService,
-              private modalService: NgbModal,
               public activeModal: NgbActiveModal,
+              private route: ActivatedRoute,
               private landenlijst: LandenlijstService) {
   }
 
   ngOnInit() {
     this.getLandenLijst();
+    // this.setBier(+(this.route.snapshot.paramMap.get('id')))
+    this.setBier(this.bierService.getWijzigId());
   }
 
   public setBier(id: number) {
     this.bierService.getBier(id).subscribe(data => {
-      this.eenbier = data;
+      this.eenBier = data;
     })
   };
 
-  public wijzigBier(bier): void {
+  public wijzigEenBier(bier): void {
     this.bierService.wijzigBier(bier);
         location.reload();
   }
 
-
-
-  public getLandenLijst(){
+  public getLandenLijst() {
     this.landenlijst.getLandenLijst().subscribe(data => {
       this.landen = data;
-    })}
-
+    })
+  }
 }
