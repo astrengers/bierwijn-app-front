@@ -23,6 +23,8 @@ import {ReviewService} from "./algemeen/reviewservice/review.service";
 import {LandenlijstService} from "./algemeen/landenlijst/landenlijst.service";
 import {WijnPaginaComponent} from "./wijn/wijn-pagina/wijn-pagina.component";
 import {DrankenAppComponent} from "./algemeen/dranken-app/dranken-app.component";
+import {ZoekbalkComponent} from  "./bier/zoekbalk/zoekbalk.component";
+
 
 
 const appRoutes: Routes = [
@@ -32,6 +34,8 @@ const appRoutes: Routes = [
   { path: 'wijn-lijst', component: WijnLijstComponent },
   { path: 'wijn-lijst/:id', component: WijnPaginaComponent}
 ];
+
+
 
 @NgModule({
   declarations: [
@@ -46,7 +50,8 @@ const appRoutes: Routes = [
     WijnThumbnail,
     BierPaginaComponent,
     AddWijnComponent,
-    WijnPaginaComponent
+    WijnPaginaComponent,
+    ZoekbalkComponent
   ],
   imports: [
     BrowserModule,
@@ -56,12 +61,11 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes),
     AngularFileUploaderModule,
-    ColorPickerModule
-
+    ColorPickerModule,
   ],
   exports:[
     BierLijstComponent,
-    RouterModule
+    RouterModule,
   ],
   providers: [BierService, WijnService, HttpClientModule, NgbActiveModal, ReviewService, LandenlijstService],
   bootstrap: [AppComponent],

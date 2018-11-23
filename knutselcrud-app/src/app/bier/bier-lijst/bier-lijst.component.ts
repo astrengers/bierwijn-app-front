@@ -40,5 +40,5 @@ export class BierLijstComponent implements OnInit {
 
   public openBierMetid(id:number){
     this.bierService.getBier(id);
-  }
+}
 }
