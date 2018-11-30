@@ -17,7 +17,7 @@
         <div class="list-group-item" *ngFor="let bier of bieren">
           <div class="row">
 
-          <bier-thumbnail class="col-10" (click)="openBierMetid(bier.id)" [bier]="bier"></bier-thumbnail>
+          <bier-thumbnail class="col-10" [bier]="bier"></bier-thumbnail>
             <div style="..." class="col-md-1"><button class="btn btn-danger" (click)="deleteBier(bier.id)"> X </button></div>
         </div>
         </div>

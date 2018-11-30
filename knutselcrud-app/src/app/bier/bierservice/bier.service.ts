@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Observable} from "rxjs/Observable";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {Bier} from "../bier.model";
 
 const httpOptions = {
   headers: new HttpHeaders ({'Content-Type': 'application/json'})
@@ -18,8 +19,8 @@ export class BierService {
     return this.http.get(this.drankenUrl+"/bierid/"+id);
   }
 
-  public getAllBier(): Observable<any> {
-    return this.http.get(this.drankenUrl+"/bier");
+  public getAllBier(): Observable<Bier []> {
+    return this.http.get<Bier []>(this.drankenUrl+"/bier");
   }
 
   public addBier(bier): Observable<number>{

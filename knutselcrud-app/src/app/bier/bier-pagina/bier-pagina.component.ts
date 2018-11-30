@@ -16,7 +16,7 @@ import {wijzigBierComponent} from "../wijzig-bier/wijzig-bier.component";
 
 export class BierPaginaComponent implements OnInit {
 
-  bier: Bier;
+  bier: Bier = new Bier();
   newReview: Review = new Review();
   gevondenReview: Array<Review>;
 

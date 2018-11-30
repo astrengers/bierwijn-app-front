@@ -9,7 +9,7 @@
       <input #box class="form-control" (keyup)=findbeers(box.value)>
       <ul class="list-group" *ngIf="true">
         <li class="list-group-item" *ngFor="let bier of filteredbieren">
-          <button type="button" class="btn btn-link" (click)="openBier(bier)"> <b>Bier:</b> {{ bier.naam }} <b>Merknaam:</b> {{bier.merkNaam}}</button>
+          <button type="button" class="btn btn-link" [routerLink]="['/bier-lijst', bier.id]"> <b>Bier:</b> {{ bier.naam }} <b>Merknaam:</b> {{bier.merkNaam}}</button>
         </li>
         <li class="list-group-item" *ngIf="noSuggestionsFound">Geen resultaat gevonden</li>
       </ul>

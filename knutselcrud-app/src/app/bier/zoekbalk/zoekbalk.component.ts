@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {BierService} from "../bierservice/bier.service";
 import {Bier} from "../bier.model";
-import {BierLijstComponent} from "../bier-lijst/bier-lijst.component";
+import {isNullOrUndefined} from "util";
 
 @Component({
   selector: 'app-zoekbalk',
@@ -9,7 +9,6 @@ import {BierLijstComponent} from "../bier-lijst/bier-lijst.component";
 })
 export class ZoekbalkComponent implements OnInit {
 
-  bieren: Array<Bier>;
 
   formControlValue = '';
   filteredbieren: Array<Bier>;
@@ -18,31 +17,42 @@ export class ZoekbalkComponent implements OnInit {
   constructor(private bierService: BierService) { }
 
   ngOnInit() {
-
   }
 
-  public getBierLijst(){
-    this.bierService.getAllBier().subscribe(data => {
-      this.bieren = data;
-    })}
+  public findbeers(input: string){
 
-  public findbeers(value: string){
-    this.getBierLijst()
-    var output = [];
-    for (let bier of this.bieren){
-      if ((bier.naam.toLowerCase().includes(value.toLowerCase()))){
-        output.push(bier);
-      } else if((bier.merkNaam.toLowerCase().includes(value.toLowerCase()))){
-        output.push(bier);
+    this.filteredbieren = [];
+
+    if(!isNullOrUndefined(input) && input.trim().length > 0) {
+      this.bierService.getAllBier().subscribe(data => {
+        const bieren = data;
+
+        var output = [];
+        for (let bier of bieren) {
+          if (this.matches(bier, input)) {
+            output.push(bier);
+          }
+        }
+        this.filteredbieren = output;
+      });
+    }
+  }
+
+  private matches(bier: Bier, input: String): boolean {
+
+    if (input.trim().length > 0) {
+      if (!isNullOrUndefined(bier.naam) && bier.naam.toLowerCase().includes(input.trim().toLowerCase())) {
+        return true;
+      }
+      if (!isNullOrUndefined(bier.merkNaam) && bier.merkNaam.toLowerCase().includes(input.trim().toLowerCase())) {
+        return true;
       }
     }
-    this.filteredbieren = output;
+    return false;
   }
 
   public openBier(bier: Bier){
     var id = bier.id;
-    this.bierService.getBier(id)
+    this.bierService.getBier(id);
   }
-
-
 }
