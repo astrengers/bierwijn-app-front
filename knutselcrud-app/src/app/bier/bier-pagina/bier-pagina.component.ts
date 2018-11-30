@@ -23,7 +23,7 @@ export class BierPaginaComponent implements OnInit {
   constructor(private bierService: BierService,
               private reviewService: ReviewService,
               private route: ActivatedRoute,
-              private modalService: NgbModal,
+              private modalService: NgbModal
               ) {
   }
 
@@ -58,15 +58,9 @@ export class BierPaginaComponent implements OnInit {
     return "../../assets/beer.png"
     }
 
-  afuConfig = {
-    uploadAPI: {
-      url:"http://localhost:8080/bier/" +this.route.snapshot.paramMap.get('id') + "/plaatje"
-    }
-  };
-
   open(){
-    const modalRef = this.modalService.open(wijzigBierComponent,{backdrop:"static"});
-    modalRef.componentInstance.name = 'World';
+    this.bierService.setWijzigId(this.bier.id);
+    const modalRef2 = this.modalService.open(wijzigBierComponent,{backdrop:"static"});
+    modalRef2.componentInstance.name = 'World';
   }
-
 }
