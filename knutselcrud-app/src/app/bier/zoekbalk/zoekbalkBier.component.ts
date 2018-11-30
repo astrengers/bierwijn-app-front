@@ -4,10 +4,10 @@ import {Bier} from "../bier.model";
 import {isNullOrUndefined} from "util";
 
 @Component({
-  selector: 'app-zoekbalk',
-  templateUrl: './zoekbalk.component.html',
+  selector: 'app-bierzoekbalk',
+  templateUrl: './zoekbalkBier.component.html',
 })
-export class ZoekbalkComponent implements OnInit {
+export class ZoekbalkBierComponent implements OnInit {
 
 
   formControlValue = '';

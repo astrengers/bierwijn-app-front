@@ -1,0 +1,29 @@
+<div class="row" align="center">
+  <div class="col-3">
+  </div>
+
+  <div class="col-5">
+
+    <div class="form-group">
+
+      <input #box class="form-control" (keyup)=findwijnen(box.value)>
+      <ul class="list-group" *ngIf="true">
+        <li class="list-group-item" *ngFor="let wijn of filteredwijnen">
+          <button type="button" class="btn btn-link" [routerLink]="['/wijn-lijst', wijn.id]"> <b>Wijn:</b> {{ wijn.naam }} <b>Merknaam:</b> {{wijn.merkNaam}}</button>
+        </li>
+        <li class="list-group-item" *ngIf="noSuggestionsFound">Geen resultaat gevonden</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="col-1">
+    <button class="btn btn-success" (click)="search(wijn)">Search</button>
+
+  </div>
+
+  <div class="col-3">
+  </div>
+
+
+</div>
