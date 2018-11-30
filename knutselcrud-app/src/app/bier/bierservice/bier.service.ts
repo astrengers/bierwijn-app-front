@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable} from "rxjs/Observable";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Bier} from "../bier.model";
 
 const httpOptions = {
   headers: new HttpHeaders ({'Content-Type': 'application/json'})
@@ -26,20 +25,23 @@ export class BierService {
   }
 
   public getBier(id:number) : Observable<any> {
-    return this.http.get(this.drankenUrl+"/bierid/"+id);
+    return this.http.get("http://localhost:8080/bierid/"+id);
   }
 
-  public getAllBier(): Observable<Bier []> {
-    return this.http.get<Bier []>(this.drankenUrl+"/bier");
+  public getAllBier(): Observable<any> {
+    return this.http.get("http://localhost:8080/bier");
   }
 
   public addBier(bier): Observable<number>{
-    return this.http.post<number>(this.drankenUrl+"/bier", bier);
+    return this.http.post<number>("http://localhost:8080/bier", bier);
   }
 
   public wijzigBier(bier){
-    return this.http.put("http://localhost:8080/updatebier", bier);
+    return this.http.post("http://localhost:8080/updatebier", bier).subscribe(data=>{
+      console.log("gelukt");
+    });
   }
+
 
   public addBierWithFile(bier, file)  {
     this.addBier(bier).subscribe(data =>{
@@ -55,7 +57,10 @@ export class BierService {
     return this.http.post<boolean>("http://localhost:8080/bier/" + id + "/plaatje", formData);
   }
 
+
   public deleteBier(bier) {
     return this.http.delete("http://localhost:8080/bier/" + bier);
   }
+
 }
+
