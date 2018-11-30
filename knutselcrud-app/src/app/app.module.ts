@@ -24,6 +24,7 @@ import {LandenlijstService} from "./algemeen/landenlijst/landenlijst.service";
 import {WijnPaginaComponent} from "./wijn/wijn-pagina/wijn-pagina.component";
 import {DrankenAppComponent} from "./algemeen/dranken-app/dranken-app.component";
 import {ZoekbalkComponent} from  "./bier/zoekbalk/zoekbalk.component";
+import {FooterComponent} from "./algemeen/footer/footer.component";
 
 
 
@@ -51,7 +52,8 @@ const appRoutes: Routes = [
     BierPaginaComponent,
     AddWijnComponent,
     WijnPaginaComponent,
-    ZoekbalkComponent
+    ZoekbalkComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
