@@ -23,10 +23,9 @@ import {ReviewService} from "./algemeen/reviewservice/review.service";
 import {LandenlijstService} from "./algemeen/landenlijst/landenlijst.service";
 import {WijnPaginaComponent} from "./wijn/wijn-pagina/wijn-pagina.component";
 import {DrankenAppComponent} from "./algemeen/dranken-app/dranken-app.component";
-import {ZoekbalkComponent} from  "./bier/zoekbalk/zoekbalk.component";
 import {FooterComponent} from "./algemeen/footer/footer.component";
-
-
+import {ZoekbalkWijnComponent} from  "./wijn/zoekbalk/ZoekbalkWijn.component";
+import {ZoekbalkBierComponent} from "./bier/zoekbalk/zoekbalkBier.component";
 
 const appRoutes: Routes = [
   { path: '', component: DrankenAppComponent},
@@ -52,7 +51,8 @@ const appRoutes: Routes = [
     BierPaginaComponent,
     AddWijnComponent,
     WijnPaginaComponent,
-    ZoekbalkComponent,
+    ZoekbalkBierComponent,
+    ZoekbalkWijnComponent,
     FooterComponent
   ],
   imports: [
@@ -67,6 +67,7 @@ const appRoutes: Routes = [
   ],
   exports:[
     BierLijstComponent,
+    WijnLijstComponent,
     RouterModule,
   ],
   providers: [BierService, WijnService, HttpClientModule, NgbActiveModal, ReviewService, LandenlijstService],
