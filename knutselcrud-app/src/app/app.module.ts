@@ -26,13 +26,15 @@ import {DrankenAppComponent} from "./algemeen/dranken-app/dranken-app.component"
 import {FooterComponent} from "./algemeen/footer/footer.component";
 import {ZoekbalkWijnComponent} from  "./wijn/zoekbalk/ZoekbalkWijn.component";
 import {ZoekbalkBierComponent} from "./bier/zoekbalk/zoekbalkBier.component";
+import {AboutComponent} from "./algemeen/about/about.component";
 
 const appRoutes: Routes = [
   { path: '', component: DrankenAppComponent},
   { path: 'bier-lijst', component: BierLijstComponent },
   { path: 'bier-lijst/:id', component: BierPaginaComponent},
   { path: 'wijn-lijst', component: WijnLijstComponent },
-  { path: 'wijn-lijst/:id', component: WijnPaginaComponent}
+  { path: 'wijn-lijst/:id', component: WijnPaginaComponent},
+  { path: 'about', component: AboutComponent}
 ];
 
 
@@ -53,7 +55,8 @@ const appRoutes: Routes = [
     WijnPaginaComponent,
     ZoekbalkBierComponent,
     ZoekbalkWijnComponent,
-    FooterComponent
+    FooterComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
