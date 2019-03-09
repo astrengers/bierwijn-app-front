@@ -24,7 +24,7 @@ import {LandenlijstService} from "./algemeen/landenlijst/landenlijst.service";
 import {WijnPaginaComponent} from "./wijn/wijn-pagina/wijn-pagina.component";
 import {DrankenAppComponent} from "./algemeen/dranken-app/dranken-app.component";
 import {FooterComponent} from "./algemeen/footer/footer.component";
-import {ZoekbalkWijnComponent} from  "./wijn/zoekbalk/ZoekbalkWijn.component";
+import {ZoekbalkWijnComponent} from "./wijn/zoekbalk/ZoekbalkWijn.component";
 import {ZoekbalkBierComponent} from "./bier/zoekbalk/zoekbalkBier.component";
 import {AboutComponent} from "./algemeen/about/about.component";
 

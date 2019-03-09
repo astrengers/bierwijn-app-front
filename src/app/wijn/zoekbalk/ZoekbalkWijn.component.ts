@@ -5,7 +5,7 @@ import {WijnService} from "../wijnservice/wijn.service";
 
 @Component({
   selector: 'app-wijnzoekbalk',
-  templateUrl: './zoekbalkWijn.component.html',
+  templateUrl: './ZoekbalkWijn.component.html',
 })
 export class ZoekbalkWijnComponent implements OnInit {
 
